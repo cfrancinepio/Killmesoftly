@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoCurr Landing Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Reset -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+      body {
+        background: #f8f8f8;
+        color: #333;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+      /* Make the main landing page fill the browser */
+      .landing-page-container1 {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="landing-page-container1">
+      <img
+        alt="background14"
+        src="public/background14-k63n-1900w.png"
+        class="landing-page-background"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;"
+      />
+      <!-- Rounded rectangle background (hidden by default) -->
+      <div id="bgRect" style="position:absolute; top:250px; left:435px; width:573px; height:289px; background-color:#ffffff; border-radius:30px; opacity:0; z-index:0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></div>
+      <!-- Password-->
+        <span class="emailtitle" style="position:absolute; top:260px; left:460px; font-size:1.5rem; color:#000000; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;">Email</span>
+        <span class="pwtitle" style="position:absolute; top:360px; left:460px; font-size:1.5rem; color:#000000; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;">Password</span>
+        <input type="email" id="emailInput" name="email" placeholder="Enter your email" style="position:absolute; top:310px; left:460px; padding:12px; border-radius:6px; border:1px solid #aaa; width:300px; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;" required>
+        <input type="password" id="passwordInput" name="password" placeholder="Enter your password" style="position:absolute; top:410px; left:460px; padding:12px; border-radius:6px; border:1px solid #aaa; width:300px; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;" required>
+        <span class="pwcaption" style="position:absolute; top:500px; left:460px; font-size:1rem; color:#000000; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;">Enter your password</span>
+        <span class="emailcaption" style="position:absolute; top:500px; left:460px; font-size:1rem; color:#000000; font-family:'Fredoka', sans-serif; z-index:10; opacity:0;">Enter your email</span>
+
+        <!-- LOGO -->
+      <img
+        alt="CoCurrLogo13"
+        src="public/cocurrlogo13-wk3a-200h.png"
+        class="landing-page-co-curr-logo"
+        style="position:absolute; top:300px; left:500px; width:auto; height:80px; z-index:1;"
+      />
+      <span class="cocurrtagline" style="position:absolute; top:400px; left:520px; font-size:2rem; color:#000000; font-family:'Fredoka', sans-serif; z-index:1;">
+        <span>Coordinate your Curriculum</span>
+      </span>
+      <!-- LANDING PAGE BUTTONS -->
+      <button class="landing-page-button1" id= "logInBtn" style="position:absolute;font-size:20px; top:470px; left:800px; background-color:#fff; color:#000000; padding:20px 24px; border-radius:20px; border:none; font-family:'Hanken Grotesk', sans-serif;">Log In</button>
+      <button class="landing-page-button2" id="signUpBtn" style="position:absolute;font-size:20px; top:470px; left:544px; background-color:#fff; color:#000000; padding:20px 24px; border-radius:20px; border:none; font-family:'Hanken Grotesk', sans-serif;">Sign Up</button>
+    </div>
+
+    <script>
+      const signUpBtn = document.getElementById('signUpBtn');
+      const logInBtn = document.getElementById('logInBtn');
+      const logo = document.querySelector('.landing-page-co-curr-logo');
+      const text = document.querySelector('.cocurrtagline');
+      const bgRect = document.getElementById('bgRect');
+      const pwtitle = document.querySelector('.pwtitle');
+      const emailtitle = document.querySelector('.emailtitle');
+      const emailInput = document.getElementById('emailInput');
+      const passwordInput = document.getElementById('passwordInput');
+
+      signUpBtn.addEventListener('click', function() {
+        // Show and fade in the rectangle background
+        bgRect.style.transition = 'opacity 0.6s ease-in-out';
+        bgRect.style.opacity = '1';
+        emailtitle.style.transition = 'opacity 0.6s ease-in-out';
+        emailtitle.style.opacity = '1';
+        pwtitle.style.transition = 'opacity 0.6s ease-in-out';
+        pwtitle.style.opacity = '1';
+        emailInput.style.transition = 'opacity 0.6s ease-in-out';
+        emailInput.style.opacity = '1';
+        passwordInput.style.transition = 'opacity 0.6s ease-in-out';
+        passwordInput.style.opacity = '1';
+      
+        // Animate logo moving up
+        logo.style.transition = 'top 0.6s ease-in-out';
+        logo.style.top = '80px';
+        // Animate text moving up
+        text.style.transition = 'top 0.6s ease-in-out';
+        text.style.top = '180px';
+        // Move Sign Up button down below the rectangle and center it
+        signUpBtn.style.transition = 'top 0.6s ease-in-out, left 0.6s ease-in-out';
+        signUpBtn.style.top = '570px';
+        signUpBtn.style.left = '47%';
+        signUpBtn.style.transform = 'translateX(-50%)';
+        // Hide Log In button
+        logInBtn.style.transition = 'opacity 0.6s ease-in-out';
+        logInBtn.style.opacity = '0';
+      });
+      
+      logInBtn.addEventListener('click', function() {
+        bgRect.style.transition = 'opacity 0.6s ease-in-out';
+        bgRect.style.opacity = '1';
+        emailtitle.style.transition = 'opacity 0.6s ease-in-out';
+        emailtitle.style.opacity = '1';
+        pwtitle.style.transition = 'opacity 0.6s ease-in-out';
+        pwtitle.style.opacity = '1';
+        emailInput.style.transition = 'opacity 0.6s ease-in-out';
+        emailInput.style.opacity = '1';
+        passwordInput.style.transition = 'opacity 0.6s ease-in-out';
+        passwordInput.style.opacity = '1';
+        // Animate logo moving up
+        logo.style.transition = 'top 0.6s ease-in-out';
+        logo.style.top = '80px';
+        // Animate text moving up
+        text.style.transition = 'top 0.6s ease-in-out';
+        text.style.top = '180px';
+        // Move Sign Up button down below the rectangle and center it
+        logInBtn.style.transition = 'top 0.6s ease-in-out, left 0.6s ease-in-out';
+        logInBtn.style.top = '570px';
+        logInBtn.style.left = '47%';
+        logInBtn.style.transform = 'translateX(-50%)';
+        // Hide Log In button
+        signUpBtn.style.transition = 'opacity 0.6s ease-in-out';
+        signUpBtn.style.opacity = '0';
+      });
+
+
+    </script>
+  </body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Forum:wght@400&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="landing-page-container1">
+        <div class="landing-page-landing-page">
+          <img
+            alt="background14"
+            src="public/background14-k63n-1900w.png"
+            class="landing-page-background"
+          />
+          <img
+            alt="CoCurrLogo13"
+            src="public/cocurrlogo13-wk3a-200h.png"
+            class="landing-page-co-curr-logo"
+          />
+          <span class="cocurrtagline">
+            <span class="landing-page-text2">Co</span>
+            <span class="landing-page-text3">ordinate your</span>
+            <span class="landing-page-text4">Curr</span>
+            <span>iculum</span>
+          </span>
+          <button class="landing-page-button1">
+            <span class="landing-page-text6">Log In</span>
+          </button>
+          <button class="landing-page-button2">
+            <span class="landing-page-text7">Log In</span>
+          </button>
+          <button class="landing-page-button2">
+            <span class="landing-page-text8">Sign Up</span>
+          </button>
+        </div>
+        <a href="https://play.teleporthq.io/signup" class="landing-page-link">
+          <div
+            aria-label="Sign up to TeleportHQ"
+            class="landing-page-container2"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 19 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="landing-page-icon1"
+            >
+              <path
+                d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
+                fill="#B23ADE"
+              ></path>
+              <path
+                d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
+                fill="#FF5C5C"
+              ></path>
+              <path
+                d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
+                fill="#2874DE"
+              ></path>
+            </svg>
+            <span class="landing-page-text9">Built in TeleportHQ</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
